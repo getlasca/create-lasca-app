@@ -1,0 +1,27 @@
+{
+  "name": "create-lasca-app",
+  "version": "0.0.1",
+  "description": "Scaffolding a Lasca project",
+  "repository": {
+    "type": "git",
+    "url": "getlasca/create-lasca-app"
+  },
+  "license": "MIT",
+  "author": "Lasca Inc. <product@lasca.co.jp>",
+  "bin": {
+    "create-lasca-app": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "watch": "rm -rf dist && tsc -w"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  }
+}
