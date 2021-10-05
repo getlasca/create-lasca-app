@@ -4,6 +4,7 @@ import chalk from "chalk";
 
 const success = chalk.green;
 const command = chalk.cyan;
+const commandStrong = chalk.cyan.bold;
 const gray = chalk.gray;
 
 module.exports = () => {
@@ -27,5 +28,11 @@ module.exports = () => {
       "  ( Get your API token from https://lasca.app/signup )"
   );
   console.log(gray(" $ ") + command("yarn webpack serve"));
+  console.log("");
+  console.log(
+    "Then app will run at " +
+      command("http://localhost:") +
+      commandStrong("8080")
+  );
   console.log("");
 };
