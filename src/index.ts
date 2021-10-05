@@ -27,6 +27,7 @@ module.exports = () => {
       command("export LASCA_API_TOKEN=<YOUR_API_TOKEN>") +
       "  ( Get your API token from https://lasca.app/signup )"
   );
+  console.log(gray(" $ ") + command("yarn lasca pull"));
   console.log(gray(" $ ") + command("yarn webpack serve"));
   console.log("");
   console.log(
