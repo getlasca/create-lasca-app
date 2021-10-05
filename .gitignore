@@ -1,3 +1,6 @@
+# for debug
+lasca-app/
+
 # build
 dist/index.js
 dist/index.d.ts
