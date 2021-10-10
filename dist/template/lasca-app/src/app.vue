@@ -6,20 +6,25 @@
 export default {
   data() {
     return {
-      count: 10,
-      valid: true,
-      items: [
-        { id: 1, count: 1 },
-        { id: 2, count: 2 },
-      ],
+      items: [1]
     };
   },
-  methods: {
-    click: function ($event) {
-      this.count++;
+  computed: {
+    hasItem: function () {
+      return this.items.length > 0
     },
-    handle: function ($event) {
-      console.log("handle");
+    hasNoItem: function () {
+      return this.items.length == 0
+    }
+  },
+  methods: {
+    add: function() {
+      this.items.push(
+        this.items.length == 0 ? 1 : Math.max(...this.items) + 1
+      );
+    },
+    remove: function(index) {
+      this.items.splice(index, 1);
     },
   },
 };
