@@ -1,6 +1,6 @@
 {
   "name": "create-lasca-app",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "dist/index.js",
   "description": "Scaffolding a Lasca project",
   "repository": {
