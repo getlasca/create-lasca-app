@@ -1,14 +1,36 @@
+import prompts from "prompts";
 import chalk from "chalk";
 import { createVuePreset } from "./preset/vue";
 
 const command = chalk.cyan;
 const commandStrong = chalk.cyan.bold;
 const gray = chalk.gray;
+const error = chalk.red;
 
-module.exports = () => {
+module.exports = async () => {
   console.log("");
 
-  createVuePreset();
+  const response = await prompts({
+    type: "select",
+    name: "value",
+    message: "Please pick a preset:",
+    choices: [
+      { title: "Vue", value: "vue" },
+      { title: "React", value: "react" },
+    ],
+    initial: 1,
+  });
+
+  switch (response.value) {
+    case "vue":
+      createVuePreset();
+      break;
+    case "react":
+      console.log("Support for react is comming soon.");
+      return;
+    default:
+      console.log(error("The preset does not exist."));
+  }
 
   console.log("\n🎉  Successfully created");
   console.log("👉  Get started with the following commands");
