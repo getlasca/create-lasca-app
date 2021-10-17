@@ -1,22 +1,36 @@
-import fs from "fs-extra";
-import path from "path";
+import prompts from "prompts";
 import chalk from "chalk";
+import { createVuePreset } from "./preset/vue";
 
-const success = chalk.green;
 const command = chalk.cyan;
 const commandStrong = chalk.cyan.bold;
 const gray = chalk.gray;
+const error = chalk.red;
 
-module.exports = () => {
+module.exports = async () => {
   console.log("");
-  console.log(success("  created ") + "lasca-app/package.json");
-  console.log(success("  created ") + "lasca-app/webpack.config.js");
-  console.log(success("  created ") + "lasca-app/public/index.html");
-  console.log(success("  created ") + "lasca-app/src/app.vue");
-  console.log(success("  created ") + "lasca-app/src/index.js");
-  console.log(success("  created ") + "lasca-app/.envrc");
 
-  fs.copySync(path.resolve(__dirname, "template/lasca-app"), "lasca-app");
+  const response = await prompts({
+    type: "select",
+    name: "value",
+    message: "Please pick a preset:",
+    choices: [
+      { title: "Vue", value: "vue" },
+      { title: "React", value: "react" },
+    ],
+    initial: 1,
+  });
+
+  switch (response.value) {
+    case "vue":
+      createVuePreset();
+      break;
+    case "react":
+      console.log("Support for react is comming soon.");
+      return;
+    default:
+      console.log(error("The preset does not exist."));
+  }
 
   console.log("\n🎉  Successfully created");
   console.log("👉  Get started with the following commands");
