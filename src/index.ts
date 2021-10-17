@@ -9,7 +9,6 @@ const error = chalk.red;
 
 module.exports = async () => {
   console.log("");
-
   const response = await prompts({
     type: "select",
     name: "value",
@@ -18,8 +17,9 @@ module.exports = async () => {
       { title: "Vue", value: "vue" },
       { title: "React", value: "react" },
     ],
-    initial: 1,
+    initial: 0,
   });
+  console.log("");
 
   switch (response.value) {
     case "vue":
