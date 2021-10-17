@@ -1,6 +1,6 @@
 import prompts from "prompts";
 import chalk from "chalk";
-import { createVuePreset } from "./preset/vue";
+import { createVueTemplate } from "./template/vue";
 
 const command = chalk.cyan;
 const commandStrong = chalk.cyan.bold;
@@ -23,7 +23,7 @@ module.exports = async () => {
 
   switch (response.value) {
     case "vue":
-      createVuePreset();
+      createVueTemplate();
       break;
     case "react":
       console.log("Support for react is comming soon.");
