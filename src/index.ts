@@ -1,6 +1,7 @@
 import prompts from "prompts";
 import chalk from "chalk";
 import { createVueTemplate } from "./template/vue";
+import { createReactTemplate } from "./template/react";
 
 const command = chalk.cyan;
 const commandStrong = chalk.cyan.bold;
@@ -26,10 +27,11 @@ module.exports = async () => {
       createVueTemplate();
       break;
     case "react":
-      console.log("Support for react is comming soon.");
-      return;
+      createReactTemplate();
+      break;
     default:
       console.log(error("The preset does not exist."));
+      return;
   }
 
   console.log("\n🎉  Successfully created");
