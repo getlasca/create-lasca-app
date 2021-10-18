@@ -1,0 +1,29 @@
+{
+  "variableSets": [
+    {
+      "name": "hasItem",
+      "variableType": "boolean",
+      "label": "if have at least one item"
+    },
+    {
+      "name": "hasNoItem",
+      "variableType": "boolean",
+      "label": "if have no item"
+    },
+    {
+      "name": "items",
+      "variableType": "number[]",
+      "label": "items"
+    }
+  ],
+  "eventSets": [
+    {
+      "name": "add",
+      "label": "add item"
+    },
+    {
+      "name": "remove",
+      "label": "remove item"
+    }
+  ]
+}
