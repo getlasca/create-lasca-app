@@ -6,24 +6,14 @@
 export default {
   data() {
     return {
-      items: [1]
+      items: [1],
     };
   },
-  computed: {
-    hasItem: function () {
-      return this.items.length > 0
-    },
-    hasNoItem: function () {
-      return this.items.length == 0
-    }
-  },
   methods: {
-    add: function() {
-      this.items.push(
-        this.items.length == 0 ? 1 : Math.max(...this.items) + 1
-      );
+    add: function () {
+      this.items.push(this.items.length == 0 ? 1 : Math.max(...this.items) + 1);
     },
-    remove: function(index) {
+    remove: function (index) {
       this.items.splice(index, 1);
     },
   },
