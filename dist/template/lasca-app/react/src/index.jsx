@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 10 };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = () => {
+  const [items, setItems] = useState([1]);
 
-  handleClick() {
-    this.setState((state) => ({
-      count: state.count + 1,
-    }));
-  }
+  const add = () => {
+    setItems([...items, items.length == 0 ? 1 : Math.max(...items) + 1]);
+  };
 
-  render() {
-    return <lasca component="component_2"></lasca>;
-  }
-}
+  const remove = (index) => {
+    const newItems = [...items];
+    newItems.splice(index, 1);
+    setItems(newItems);
+  };
+
+  return <lasca component="component_1"></lasca>;
+};
 
 ReactDOM.render(<App />, document.getElementById("app"));
