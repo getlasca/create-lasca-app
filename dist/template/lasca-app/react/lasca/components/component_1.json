@@ -1,29 +1,13 @@
 {
-  "variableSets": [
+  "conditions": ["items.length > 0", "items.length === 0"],
+  "loops": [
     {
-      "name": "hasItem",
-      "variableType": "boolean",
-      "label": "if have at least one item"
-    },
-    {
-      "name": "hasNoItem",
-      "variableType": "boolean",
-      "label": "if have no item"
-    },
-    {
-      "name": "items",
-      "variableType": "number[]",
-      "label": "items"
+      "expression": "items",
+      "itemVariable": "item",
+      "itemIndex": "index",
+      "key": "item"
     }
   ],
-  "eventSets": [
-    {
-      "name": "add",
-      "label": "add item"
-    },
-    {
-      "name": "remove",
-      "label": "remove item"
-    }
-  ]
+  "variables": ["item"],
+  "events": ["add", "remove"]
 }
