@@ -1,0 +1,15 @@
+{
+  "name": "lasca-app",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^10.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@lasca/cli": "^0.0.35",
+    "lasca-loader": "^0.0.113"
+  }
+}

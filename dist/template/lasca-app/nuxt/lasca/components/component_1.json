@@ -1,0 +1,13 @@
+{
+  "conditions": ["items.length > 0", "items.length === 0"],
+  "loops": [
+    {
+      "expression": "items",
+      "itemVariable": "item",
+      "itemIndex": "index",
+      "key": "item"
+    }
+  ],
+  "variables": ["item"],
+  "events": ["add", "remove(index)"]
+}
