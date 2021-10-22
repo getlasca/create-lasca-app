@@ -2,6 +2,8 @@ import prompts from "prompts";
 import chalk from "chalk";
 import { createVueTemplate } from "./template/vue";
 import { createReactTemplate } from "./template/react";
+import { createNuxtTemplate } from "./template/nuxt";
+import { createNextTemplate } from "./template/next";
 
 const command = chalk.cyan;
 const commandStrong = chalk.cyan.bold;
@@ -17,6 +19,8 @@ module.exports = async () => {
     choices: [
       { title: "Vue.js", value: "vue" },
       { title: "React", value: "react" },
+      { title: "Nuxt.js", value: "nuxt" },
+      { title: "Next.js", value: "next" },
     ],
     initial: 0,
   });
@@ -28,6 +32,12 @@ module.exports = async () => {
       break;
     case "react":
       createReactTemplate();
+      break;
+    case "nuxt":
+      createNuxtTemplate();
+      break;
+    case "next":
+      createNextTemplate();
       break;
     default:
       console.log(error("The preset does not exist."));
@@ -44,12 +54,35 @@ module.exports = async () => {
       "  ( Get your API token from https://lasca.app/signup )"
   );
   console.log(gray(" $ ") + command("yarn lasca pull"));
-  console.log(gray(" $ ") + command("yarn webpack serve"));
-  console.log("");
-  console.log(
-    "Then app will run at " +
-      command("http://localhost:") +
-      commandStrong("8080")
-  );
-  console.log("");
+
+  switch (response.value) {
+    case "vue":
+    case "react":
+      console.log(gray(" $ ") + command("yarn webpack serve\n"));
+      console.log(
+        "Then app will run at " +
+          command("http://localhost:") +
+          commandStrong("8080") +
+          "\n"
+      );
+      break;
+    case "nuxt":
+      console.log(gray(" $ ") + command("yarn nuxt\n"));
+      console.log(
+        "Then app will run at " +
+          command("http://localhost:") +
+          commandStrong("3000") +
+          "\n"
+      );
+      break;
+    case "next":
+      console.log(gray(" $ ") + command("yarn next dev\n"));
+      console.log(
+        "Then app will run at " +
+          command("http://localhost:") +
+          commandStrong("3000") +
+          "\n"
+      );
+      break;
+  }
 };

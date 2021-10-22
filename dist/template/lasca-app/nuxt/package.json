@@ -1,0 +1,13 @@
+{
+  "name": "lasca-app",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "nuxt": "^2.15.4"
+  },
+  "devDependencies": {
+    "@lasca/cli": "^0.0.35",
+    "lasca-loader": "^0.0.113"
+  }
+}
