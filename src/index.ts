@@ -15,7 +15,7 @@ module.exports = async () => {
     name: "value",
     message: "Please pick a preset:",
     choices: [
-      { title: "Vue", value: "vue" },
+      { title: "Vue.js", value: "vue" },
       { title: "React", value: "react" },
     ],
     initial: 0,

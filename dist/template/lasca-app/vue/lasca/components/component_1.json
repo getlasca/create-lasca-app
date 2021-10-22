@@ -9,5 +9,5 @@
     }
   ],
   "variables": ["item"],
-  "events": ["add", "remove"]
+  "events": ["add", "remove(index)"]
 }
