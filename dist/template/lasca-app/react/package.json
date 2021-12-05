@@ -20,7 +20,7 @@
     "@lasca/cli": "^0.0.64",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.4.0",
-    "lasca-loader": "^0.0.115",
+    "lasca-loader": "^0.0.116",
     "style-loader": "^3.3.0",
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.1",

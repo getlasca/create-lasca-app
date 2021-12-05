@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@lasca/cli": "^0.0.64",
-    "lasca-loader": "^0.0.115"
+    "lasca-loader": "^0.0.116"
   }
 }
