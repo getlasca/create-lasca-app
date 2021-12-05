@@ -3,6 +3,9 @@ module.exports = {
     config.module.rules.push({
       test: /\.jsx$/,
       loader: "lasca-loader",
+      options: {
+        selfStyleImport: true,
+      },
     });
     return config;
   },
